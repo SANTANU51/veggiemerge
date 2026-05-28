@@ -1,0 +1,49 @@
+name: veggie_merge
+description: A drop-and-merge vegetable puzzle game - mobile project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Game engine & physics
+  flame: ^1.18.0
+  flame_forge2d: ^0.18.2
+  forge2d: ^0.13.1
+
+  # State management
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+
+  # In-app purchases (abstracts StoreKit 2 + Billing Library 6)
+  in_app_purchase: ^3.2.0
+
+  # Persistence
+  shared_preferences: ^2.3.2
+  flutter_secure_storage: ^9.2.2
+
+  # Dependency injection
+  get_it: ^8.0.2
+
+  # Firebase
+  firebase_core: ^3.8.1
+  firebase_crashlytics: ^4.1.4
+  firebase_performance: ^0.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/

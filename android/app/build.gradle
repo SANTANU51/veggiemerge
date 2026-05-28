@@ -1,0 +1,57 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    // Firebase plugins - activate once google-services.json is injected via CI.
+    // id "com.google.gms.google-services"
+    // id "com.google.firebase.crashlytics"
+}
+
+android {
+    namespace "com.santanu.veggiemergegame"
+    compileSdk flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        applicationId "com.santanu.veggiemergegame"
+        // AC-001: Android 8.0 (Oreo) minimum — modern security, EncryptedSharedPreferences.
+        minSdk 26
+        targetSdk 35
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+
+        release {
+            // R8 full-mode minification (spec §Security).
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+
+            // TODO: replace with a release signing config before Play Store upload.
+            // Signing keys must come from CI secrets — never commit keystore to repo.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source "../.."
+}
