@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/screens/game_screen.dart';
+
 /// Root application widget.
 /// Navigation and theming will be expanded in subsequent tasks.
 class VeggieMergeApp extends StatelessWidget {
@@ -18,8 +20,9 @@ class VeggieMergeApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Poppins', // added in TASK-VMG-007
       ),
-      // GameScreen will replace this placeholder in TASK-VMG-007.
-      home: const _PlaceholderScreen(),
+
+      // Placeholder replaced by GameScreen — TASK-VMG-003.
+      home: const GameScreen(),
     );
   }
 }
@@ -36,10 +39,12 @@ class _PlaceholderScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '🥦',
+              '🥬',
               style: TextStyle(fontSize: 64),
             ),
+
             SizedBox(height: 16),
+
             Text(
               'Veggie Merge',
               style: TextStyle(
@@ -48,10 +53,15 @@ class _PlaceholderScreen extends StatelessWidget {
                 color: Color(0xFF2E7D32),
               ),
             ),
+
             SizedBox(height: 8),
+
             Text(
               'Setting up…',
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+              ),
             ),
           ],
         ),

@@ -11,9 +11,9 @@ dependencies:
     sdk: flutter
 
   # Game engine & physics
-  flame: ^1.18.0
-  flame_forge2d: ^0.18.2
-  forge2d: ^0.13.1
+  flame: ^1.20.0
+  flame_forge2d: ^0.19.2
+  
 
   # State management
   flutter_bloc: ^8.1.6
